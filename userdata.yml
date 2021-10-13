@@ -1,0 +1,9 @@
+#cloud-config
+# update apt on boot
+package_update: true
+# install nginx
+packages:
+- nginx
+runcmd:
+- [ mkdir, -p, /var/www/html ]
+- [ sh, -c, 'echo "<h1>Hello, i am new nginx server running on instance: $(hostname)</h1>" > /var/www/html/index.html' ]
