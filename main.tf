@@ -53,7 +53,6 @@ data "aws_vpc" "default" {
 # Security group which allows access to the web server using HTTP and HTTPS
 # protocols
 resource "aws_security_group" "www" {
-  name        = "www"
   description = "Allow TLS inbound traffic"
   vpc_id      = data.aws_vpc.default.id
 
